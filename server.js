@@ -47,16 +47,16 @@ const pool = new Pool({
 async function initializeDatabase() {
     try {
         const client = await pool.connect();
-        await client.query(`
-            CREATE TABLE IF NOT EXISTS submissions (
-                id SERIAL PRIMARY KEY,
-                name TEXT NOT NULL,
-                email TEXT NOT NULL,
-                about TEXT,
-                prompt TEXT NOT NULL,
-                submission_date TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
-            )
-        `);
+       await client.query(`
+    CREATE TABLE IF NOT EXISTS submissions (
+        id SERIAL PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        about TEXT,
+        prompt TEXT NOT NULL,
+        submission_date TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    )
+`);
         client.release();
         console.log('Connected to PostgreSQL and Submissions table is ready.');
     } catch (err) {
