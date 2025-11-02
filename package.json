@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "my personal portfolio with my imaginary think\r #\u0000 \u0000m\u0000y\u0000n\u0000i\u0000r\u0000e\u0000e\u0000k\u0000s\u0000h\u0000t\u0000i\u0000h\u0000\r\u0000 \u0000",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,5 +19,14 @@
     "nodemailer": "^7.0.9",
     "path": "^0.12.7",
     "pg": "^8.16.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nireekshithkumar/mynireekshtih.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nireekshithkumar/mynireekshtih/issues"
+  },
+  "homepage": "https://github.com/Nireekshithkumar/mynireekshtih#readme"
 }

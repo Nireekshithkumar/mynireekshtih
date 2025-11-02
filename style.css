@@ -157,7 +157,6 @@
         right: 0;
         margin: 0 auto;
         width: 100%;
-
         height: 88px;
         background: transparent;
         display: flex;
@@ -171,8 +170,6 @@
         font-weight: 800;
         font-size: 26px;
         letter-spacing: 2px;
-
-
       }
 
       .folio {
@@ -300,8 +297,8 @@
         -webkit-text-stroke: .8px var(--accent);
         font-size: 28px;
         position: relative;
-        display: inline-block;
-        padding-right: 12px
+        display: inline-flex;
+        padding-right: 12px;
       }
 
       .design::before {
@@ -314,7 +311,7 @@
         overflow: hidden;
         border-right: 2px solid var(--accent);
         width: 0;
-        animation: typing 3.6s steps(20, end) infinite
+        animation: typing 3.6s steps(20, end) infinite;
       }
 
       .design {
