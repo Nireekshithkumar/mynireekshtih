@@ -39,21 +39,24 @@ app.get('/submissions.html', (req, res) => {
 // --- DATABASE SETUP (PostgreSQL) ---
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 async function initializeDatabase() {
     try {
         const client = await pool.connect();
         await client.query(`
-            CREATE TABLE IF NOT EXISTS submissions (
-                id SERIAL PRIMARY KEY,
-                name TEXT NOT NULL,
-                email TEXT NOT NULL,
-                about TEXT,
-                prompt TEXT NOT NULL,
-                submission_date TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
-            )
-        `);
+            CREATE TABLE IF NOT EXISTS submissions (
+                id SERIAL PRIMARY KEY,
+                name TEXT NOT NULL,
+                email TEXT NOT NULL,
+                about TEXT,
+                prompt TEXT NOT NULL,
+                submission_date TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+            )
+        `);
         client.release();
         console.log('Connected to PostgreSQL and Submissions table is ready.');
     } catch (err) {
